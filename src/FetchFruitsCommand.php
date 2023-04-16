@@ -53,9 +53,9 @@ class FetchFruitsCommand extends Command
                 $fruit['nutritions']['fat']
             ]);
         }
+
         $dsn = 'sendmail://default?command=../sendmail/sendmail%20-oi%20-t';
         $transport = Transport::fromDsn($dsn);
-        //$transport = Transport::fromDsn('sendmail://default'); 
         $mailer = new Mailer($transport);
         $email = (new Email())
             ->from('sender@example.com')
@@ -64,8 +64,6 @@ class FetchFruitsCommand extends Command
             ->text('Fetching completed successfully.');
 
         $mailer->send($email);
-        //mail("alphadeveloper622@gmail.com","Subject","Email message","From: test@gmail.com");
-
 
         // Output success message
         $output->writeln('Fruits fetched and saved to database.');
