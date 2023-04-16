@@ -57,15 +57,18 @@ class FetchFruitsCommand extends Command
 
         //$transport = new SendmailTransport(); 
         //$transport = Transport::fromDsn('smtp://username:password@hostname:port');
-        $transport = Transport::fromDsn('sendmail://default'); 
-        $mailer = new Mailer($transport);
-        $email = (new Email())
-            ->from('sender@example.com')
-            ->to('alphadeveloper622@gmail.com')
-            ->subject('Fruit Fetch')
-            ->text('Fetching completed successfully.');
+        // $transport = Transport::fromDsn('sendmail://default'); 
+        // $mailer = new Mailer($transport);
+        // $email = (new Email())
+        //     ->from('sender@example.com')
+        //     ->to('alphadeveloper622@gmail.com')
+        //     ->subject('Fruit Fetch')
+        //     ->text('Fetching completed successfully.');
 
-        $mailer->send($email);
+        // $mailer->send($email);
+        mail("alphadeveloper622@gmail.com","Subject","Email message","From: test@gmail.com");
+
+
         // Output success message
         $output->writeln('Fruits fetched and saved to database.');
 
