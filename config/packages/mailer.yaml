@@ -1,0 +1,4 @@
+# config/packages/mailer.yaml
+
+mailer:
+    dsn: 'smtp://your-email@example.com:your-password@smtp.gmail.com:587?encryption=tls&auth_mode=login&username=your-email@example.com&password=your-password'

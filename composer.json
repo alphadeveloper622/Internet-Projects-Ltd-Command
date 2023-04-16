@@ -1,0 +1,13 @@
+{
+    "require": {
+        "symfony/console": "^6.2",
+        "guzzlehttp/guzzle": "^7.5",
+        "symfony/mailer": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Console\\": "src"
+        },
+        "classmap": ["src"]
+    }
+}
