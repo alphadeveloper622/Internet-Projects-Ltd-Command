@@ -7,7 +7,8 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mailer\Mailer; 
-use Symfony\Component\Mailer\Transport\SendmailTransport; 
+//use Symfony\Component\Mailer\Transport\SendmailTransport; 
+use Symfony\Component\Mailer\Transport;
 use Symfony\Component\Mime\Email;
 use \PDO;
 
@@ -54,7 +55,9 @@ class FetchFruitsCommand extends Command
             ]);
         }
 
-        $transport = new SendmailTransport(); 
+        //$transport = new SendmailTransport(); 
+        //$transport = Transport::fromDsn('smtp://username:password@hostname:port');
+        $transport = Transport::fromDsn('sendmail://default'); 
         $mailer = new Mailer($transport);
         $email = (new Email())
             ->from('sender@example.com')
